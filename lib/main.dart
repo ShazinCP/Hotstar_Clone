@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/view/downloads/download_screen.dart';
+import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/helper/color.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:hotstar/view/main_page/main_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,19 +15,27 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SelectedIndexProvider()),
+      ],
+      child: MaterialApp(
+        title: 'Disney Hotstar',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+          appBarTheme: const AppBarTheme(backgroundColor: transparent),
+          primarySwatch: blueColor,
+          colorScheme: const ColorScheme.dark(),
+          scaffoldBackgroundColor: backgroundcolor,
+          fontFamily: GoogleFonts.poppins().fontFamily,
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(color: Colors.white),
+            bodyMedium: TextStyle(color: Colors.white),
+          ),
+        ),
+        home: MainScreen(),
       ),
-      home: const DownloadScreen(),
     );
   }
 }
-
-
-  
-
-  
