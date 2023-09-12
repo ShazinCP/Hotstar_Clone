@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/controller/trending_movie_provider.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotstar/view/main_page/main_screen.dart';
@@ -18,6 +19,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SelectedIndexProvider()),
+        ChangeNotifierProvider(
+            create: (context) => TrendingMovieInitializeProvider()),
       ],
       child: MaterialApp(
         title: 'Disney Hotstar',
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           appBarTheme: const AppBarTheme(backgroundColor: transparent),
-          primarySwatch: blueColor,
+          primarySwatch: cBlueColor,
           colorScheme: const ColorScheme.dark(),
           scaffoldBackgroundColor: backgroundcolor,
           fontFamily: GoogleFonts.poppins().fontFamily,

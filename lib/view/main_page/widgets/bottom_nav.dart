@@ -13,15 +13,15 @@ class BottomNavigationWidget extends StatelessWidget {
     return Consumer<SelectedIndexProvider>(
       builder: (context, value, child) {
         return BottomNavigationBar(
-      backgroundColor: blackColor,
+      backgroundColor: cBlackColor,
       currentIndex: value.selectedIndex,
       onTap: (index) {
         value.setIndex(index);
       },
       elevation: 0,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: whiteColor,
-      unselectedItemColor: greyColor,
+      selectedItemColor: cWhiteColor,
+      unselectedItemColor: cGreyColor,
       selectedIconTheme: const IconThemeData(color: Colors.white),
       unselectedIconTheme: const IconThemeData(color: Colors.grey),
       items: const [

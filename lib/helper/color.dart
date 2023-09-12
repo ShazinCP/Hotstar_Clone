@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 const backgroundcolor = Colors.black;
-const whiteColor = Colors.white;
-const blackColor = Colors.black;
-const greyColor = Colors.grey;
-const blueColor = Colors.blue;
 const transparent = Colors.transparent;
-// const kButtonColorBlue = Colors.blue;
-// const kButtonColorWhite = Colors.white;
+const cWhiteColor = Colors.white;
+const cBlueColor = Colors.blue;
+const cBlackColor = Colors.black;
+const cGreyColor = Colors.grey;
+const cButtonColorBlue = Colors.blue;
+const cButtonColorWhite = Colors.white;
+const cBottonColorWhite=Colors.white;
