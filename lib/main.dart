@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/controller/homescroll_provider.dart';
+import 'package:hotstar/controller/internet_connectivity_provider.dart';
+import 'package:hotstar/controller/search_provider.dart';
+import 'package:hotstar/controller/search_idl_provider.dart';
+import 'package:hotstar/controller/search_result_provider.dart';
 import 'package:hotstar/controller/trending_movie_provider.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,9 +23,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => SelectedIndexProvider()),
         ChangeNotifierProvider(
-            create: (context) => TrendingMovieInitializeProvider()),
+          create: (context) => SelectedIndexProvider()),
+        ChangeNotifierProvider(
+          create: (context) => TrendingMovieProvider()),
+        ChangeNotifierProvider(
+          create: (context) => SearchProvider()),
+        ChangeNotifierProvider(
+          create: (context) => SearchIDLProvider()),
+        ChangeNotifierProvider(
+          create: (context) => SearchResultProvider()),
+        ChangeNotifierProvider(
+          create: (context) => InternetConnectivityProvider()),
+        ChangeNotifierProvider(
+          create: (context) => HomeScrollProvider()),
       ],
       child: MaterialApp(
         title: 'Disney Hotstar',

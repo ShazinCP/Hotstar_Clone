@@ -29,7 +29,7 @@ class _CenterSectionState extends State<CenterSection> {
           child: SizedBox(
             width: size.width,
             height: size.width,
-            child: Consumer<TrendingMovieInitializeProvider>(
+            child: Consumer<TrendingMovieProvider>(
               builder: (context, value, child) {
                 if (value.isLoading) {
                   return const Center(

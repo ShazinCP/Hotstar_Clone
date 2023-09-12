@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:netflix/services/download_services.dart';
 
-class TrendingMovieInitializeProvider extends ChangeNotifier{
+class TrendingMovieProvider extends ChangeNotifier{
   List imageList=[
     "assets/download.jpeg",
     "assets/download.jpeg",

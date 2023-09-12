@@ -24,7 +24,7 @@ class _BackgroundCardState extends State<BackgroundCard> {
           decoration: BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage("assets/download.jpeg"),
+              image: AssetImage(""),
             ),
           ),
         ),
