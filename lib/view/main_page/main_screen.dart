@@ -3,7 +3,6 @@ import 'package:hotstar/controller/botton_nav_provider.dart';
 import 'package:hotstar/view/downloads/download_screen.dart';
 import 'package:hotstar/view/home/home_screen.dart';
 import 'package:hotstar/view/main_page/widgets/bottom_nav.dart';
-import 'package:hotstar/view/myspace/my_space_screen.dart';
 import 'package:hotstar/view/new&hot/new_and_hot_screen.dart';
 import 'package:hotstar/view/search/search_screen.dart';
 import 'package:provider/provider.dart';
@@ -16,7 +15,6 @@ class MainScreen extends StatelessWidget {
      const SearchScreen(),
      const NewAndHotScreen(),
       DownloadScreen(),
-     const MySpaceScreen()
   ];
 
   @override

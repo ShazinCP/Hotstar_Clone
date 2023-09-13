@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/search_provider.dart';
+import 'package:hotstar/controller/search_query_provider.dart';
 import 'package:provider/provider.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final searchQueryModel = Provider.of<SearchProvider>(context);
+    final searchQueryModel = Provider.of<SearchQueryProvider>(context);
     return Scaffold(
       body: SafeArea(
         child: Padding(

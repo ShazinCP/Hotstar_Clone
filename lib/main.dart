@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/controller/home_backgroundcard_provider.dart';
 import 'package:hotstar/controller/homescroll_provider.dart';
-import 'package:hotstar/controller/internet_connectivity_provider.dart';
-import 'package:hotstar/controller/search_provider.dart';
+import 'package:hotstar/controller/new_hot_provider.dart';
 import 'package:hotstar/controller/search_idl_provider.dart';
+import 'package:hotstar/controller/search_query_provider.dart';
 import 'package:hotstar/controller/search_result_provider.dart';
+import 'package:hotstar/controller/top_rated_provider.dart';
 import 'package:hotstar/controller/trending_movie_provider.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,15 +30,19 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => TrendingMovieProvider()),
         ChangeNotifierProvider(
-          create: (context) => SearchProvider()),
+          create: (context) => SearchQueryProvider()),
         ChangeNotifierProvider(
           create: (context) => SearchIDLProvider()),
         ChangeNotifierProvider(
           create: (context) => SearchResultProvider()),
         ChangeNotifierProvider(
-          create: (context) => InternetConnectivityProvider()),
-        ChangeNotifierProvider(
           create: (context) => HomeScrollProvider()),
+         ChangeNotifierProvider(
+          create: (context) => NewAndHotProvider()),
+        ChangeNotifierProvider(
+          create: (context) => HomeBackgroundCardProvider()),
+        ChangeNotifierProvider(
+          create: (context) => TopRateProvider()),
       ],
       child: MaterialApp(
         title: 'Disney Hotstar',
