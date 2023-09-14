@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
 import 'package:hotstar/controller/search_query_provider.dart';
+import 'package:hotstar/view/search/widget/search_idle.dart';
+import 'package:hotstar/view/search/widget/search_result.dart';
 import 'package:provider/provider.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -32,16 +34,16 @@ class SearchScreen extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 style: const TextStyle(color: Colors.white),
-                placeholder: 'Movies, shows and more', 
+                placeholder: 'Movies, shows and more',
               ),
-
               cHeight,
-              // Expanded(
-              //     child: searchQueryModel.query.isEmpty
-              //         ? const SearchIdleWidget()
-              //         : SearchResultWidget(
-              //             apiQuery: searchQueryModel.query,
-              //           )),
+              Expanded(
+                child: searchQueryModel.query.isEmpty
+                    ? const SearchIdleWidget()
+                    : SearchResultWidget(
+                        apiQuery: searchQueryModel.query,
+                      ),
+              ),
             ],
           ),
         ),

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:hotstar/model/movie_model.dart';
-import 'package:hotstar/widgets/button_widget.dart';
 import 'package:hotstar/widgets/video_widget.dart';
 import 'package:intl/intl.dart';
-
 
 class ComingSoonInfoCard extends StatelessWidget {
   final MovieModel movieInfo;
@@ -18,19 +16,19 @@ class ComingSoonInfoCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Row(
       children: [
+        // SizedBox(
+        //   width: 50,
+        //   height: 400,
+        //   child: Column(
+        //     mainAxisAlignment: MainAxisAlignment.start,
+        //     children: [
+        //       Text(fetchDate(movieInfo.releaseDate!),
+        //           style: const TextStyle(fontSize: 16, color: cGreyColor)),
+        //     ],
+        //   ),
+        // ),
         SizedBox(
-          width: 50,
-          height: 400,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(fetchDate(movieInfo.releaseDate!),
-                  style: const TextStyle(fontSize: 16, color: cGreyColor)),
-            ],
-          ),
-        ),
-        SizedBox(
-          width: size.width - 50,
+          width: size.width,
           height: 480,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,32 +36,45 @@ class ComingSoonInfoCard extends StatelessWidget {
               VideoWidget(
                 videoImage: imageUrl,
               ),
-               const Row(
+              cHeight,
+              Row(
                 children: [
-                   Spacer(),
-                  Row(
-                    children: [
-                      CustomButtonWidget(
-                        icon: Icons.add_alert_rounded,
-                        title: "Remind me",
-                        iconSize: 20,
-                        textSize: 12,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: size.width - 16,
+                      child: TextButton.icon(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(cGreyColor900),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                          ),
+                        ),
+                        icon: const Icon(
+                          Icons.notifications_none_sharp,
+                          color: cWhiteColor,
+                        ),
+                        label: Text(
+                          "Remind Me   ${fetchDate(movieInfo.releaseDate!)}",
+                          style:
+                              const TextStyle(fontSize: 14, color: cWhiteColor),
+                          
+                        ),
                       ),
-                      cWidth,
-                      CustomButtonWidget(
-                        icon: Icons.info,
-                        title: "Info",
-                        iconSize: 20,
-                        textSize: 12,
-                      ),
-                      cWidth
-                    ],
+                    ),
                   ),
+                  // Text(fetchDate(movieInfo.releaseDate!),
+                  //     style:
+                  //         const TextStyle(fontSize: 16, color: cGreyColor)),
                 ],
               ),
-              cHeight,
-              Text("Coming on ${fetchDay(movieInfo.releaseDate!)}"),
-              cHeight,
+              // cHeight,
+              // Text("Coming on ${fetchDay(movieInfo.releaseDate!)}"),
+              // cHeight,
               Text(
                 movieInfo.originalTitle ?? 'Empty Title',
                 style: const TextStyle(
@@ -75,7 +86,8 @@ class ComingSoonInfoCard extends StatelessWidget {
               Text(
                 movieInfo.overview,
                 style: const TextStyle(color: cGreyColor),
-              )
+              ),
+              cHeight
             ],
           ),
         ),
@@ -87,7 +99,7 @@ class ComingSoonInfoCard extends StatelessWidget {
     DateTime dateInFormat = DateTime.parse(date);
     final formatDate = (DateFormat.MMMMd().format(dateInFormat)).split(" ");
 
-    return "${formatDate.first.substring(0, 3)} \n${formatDate.last}";
+    return "${formatDate.first.substring(0, 3)} ${formatDate.last}";
   }
 
   String fetchDay(String date) {

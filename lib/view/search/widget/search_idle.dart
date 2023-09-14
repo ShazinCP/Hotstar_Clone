@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
@@ -19,8 +18,8 @@ class _SearchIdleWidgetState extends State<SearchIdleWidget> {
   @override
   void initState() {
     super.initState();
-    // Provider.of<SearchIDLProvider>(context, listen: false).fetchSearchIDLMovies();
-    // Provider.of<InternetConnectivityProvider>(context,listen: false).getInternetConnectivity(context);
+    Provider.of<SearchIDLProvider>(context, listen: false)
+        .fetchSearchIDLMovies();
   }
 
   @override
@@ -35,15 +34,17 @@ class _SearchIdleWidgetState extends State<SearchIdleWidget> {
         Expanded(
           child: Consumer<SearchIDLProvider>(
             builder: (context, value, child) {
-              if(value.isLoading){
-                return const Center(child: CircularProgressIndicator(),);
-              }else if(value.trendingMovies.isEmpty){
+              if (value.isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (value.trendingMovies.isEmpty) {
                 return const Text("NO data available");
               }
               return ListView.separated(
                 shrinkWrap: true,
-                itemBuilder: (context, index) =>
-                    PopularSearchItemTile(movieInfo: value.trendingMovies[index]),
+                itemBuilder: (context, index) => PopularSearchItemTile(
+                    movieInfo: value.trendingMovies[index]),
                 separatorBuilder: (context, index) => cHeight20,
                 itemCount: value.trendingMovies.length,
               );
@@ -68,31 +69,23 @@ class PopularSearchItemTile extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: screenWidth * 0.35,
-          height: 65,
+          width: screenWidth * 0.25,
+          height: 55,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(fit: BoxFit.cover, image: NetworkImage(url))),
+            image: DecorationImage(fit: BoxFit.cover, image: NetworkImage(url)),
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
         cWidth,
         Expanded(
           child: Text(
             movieInfo.title ?? "No Movie Name Found",
-            style: const TextStyle(
-                color: cWhiteColor, fontWeight: FontWeight.bold, fontSize: 16),
+            style: const TextStyle(color: cWhiteColor, fontSize: 14),
           ),
         ),
-        const CircleAvatar(
-          backgroundColor: cWhiteColor,
-          radius: 25,
-          child: CircleAvatar(
-            backgroundColor: cBlackColor,
-            radius: 23,
-            child: Icon(
-              CupertinoIcons.play_fill,
-              color: cWhiteColor,
-            ),
-          ),
+        const Icon(
+          Icons.arrow_forward_ios_rounded,
+          size: 12,
         )
       ],
     );

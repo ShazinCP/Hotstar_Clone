@@ -4,7 +4,7 @@ import 'package:hotstar/constants/constants.dart';
 import 'package:hotstar/helper/color.dart';
 
 class NumberCard extends StatelessWidget {
-  const NumberCard({super.key,required this.index,required this.imageUrl});
+  const NumberCard({super.key, required this.index, required this.imageUrl});
   final int index;
   final String imageUrl;
 
@@ -14,31 +14,37 @@ class NumberCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            const SizedBox(
-              width: 40,height: 200,),
+             const SizedBox(
+              width: 30,
+              height: 200,
+            ),
             Container(
               width: 130,
-              height: 200,
+              height: 180,
               decoration: BoxDecoration(
-                borderRadius: cRadius10,
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(imageUrl))
-              ),
+                  borderRadius: cRadius10,
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: NetworkImage(imageUrl))),
             ),
           ],
         ),
         Positioned(
-          left: 13,
-          bottom: -20,
+          left: 18,
+          bottom: -25,
           child: BorderedText(
             strokeColor:cWhiteColor,
-            strokeWidth: 10.0,
-            child: Text("${index+1}",style: const TextStyle(
-              fontSize: 140,
-              color: cBlackColor,
-              fontWeight: FontWeight.bold,
-              decoration: TextDecoration.none,),))),
+            strokeWidth: 6.0,
+            child: Text(
+              "${index + 1}",
+              style: const TextStyle(
+                fontSize: 80,
+                color: cBlackColor,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none,
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

@@ -1,27 +1,25 @@
-// import 'package:flutter/material.dart';
-// import 'package:hotstar/constants/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:hotstar/constants/constants.dart';
 
-// class MainCard extends StatelessWidget {
-//   final String imageUrlFromApi;
+class MainCardWidget extends StatelessWidget {
+  final String imageUrlFromApi;
+  const MainCardWidget({
+    super.key,
+    required this.imageUrlFromApi
+  });
 
-//   const MainCard({
-//     super.key, required this.imageUrlFromApi,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       width: 150,
-//       height: 250,
-      
-//       decoration: BoxDecoration(
-//         image:  DecorationImage(
-//           image: NetworkImage(
-//             imageUrlFromApi),
-//             fit: BoxFit.cover
-//             ),
-//           borderRadius: cRadius10
-//             ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal:10),
+      width: 130,
+      height: 180,
+      decoration: BoxDecoration(
+        borderRadius: cRadius10,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(imageUrlFromApi))
+      ),
+    );
+  }
+}

@@ -12,6 +12,7 @@ class TopFreeMoviesInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     String imageUrl =
         'https://image.tmdb.org/t/p/w500${movieInfo.posterPath}?api_key=b2dee3b855c4ea705ff5dda3c0201768';
+     Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,33 +29,40 @@ class TopFreeMoviesInfoCard extends StatelessWidget {
           movieInfo.overview,
           style: const TextStyle(color: cGreyColor),
         ),
-        cHeight50,
-        VideoWidget(videoImage: imageUrl),
         cHeight,
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        VideoWidget(videoImage: imageUrl),
+        cHeight5,
+         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CustomButtonWidget(
-              icon: Icons.share,
-              title: "Share",
-              iconSize: 25,
-              textSize: 16,
-            ),
-            cWidth,
-            CustomButtonWidget(
-              icon: Icons.add,
-              title: "My List",
-              iconSize: 25,
-              textSize: 16,
-            ),
-            cWidth,
-            CustomButtonWidget(
-              icon: Icons.play_arrow,
-              title: "Play",
-              iconSize: 25,
-              textSize: 15,
-            ),
-            cWidth
+             Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: size.width - 25,
+                      child: TextButton.icon(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(cGreyColor900),
+                          shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                          ),
+                        ),
+                        icon: const Icon(
+                          Icons.play_arrow_rounded,
+                          color: cWhiteColor,
+                        ),
+                        label: const Text(
+                          "Watch Now",
+                          style:
+                               TextStyle(fontSize: 14, color: cWhiteColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                  cHeight20
           ],
         )
       ],

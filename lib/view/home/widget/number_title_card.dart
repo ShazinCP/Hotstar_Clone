@@ -52,10 +52,10 @@ class _NumberTitleCardState extends State<NumberTitleCard> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const MainTitle(title: "Top 10 TV Shows in india Today"),
+            const MainTitle(title: "Top 10 in india Today"),
             cHeight,
             LimitedBox(
-              maxHeight: 200,
+              maxHeight: 180,
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(

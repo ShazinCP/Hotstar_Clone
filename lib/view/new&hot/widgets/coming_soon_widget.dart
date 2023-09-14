@@ -18,7 +18,6 @@ class _ComingSoonWidgetState extends State<ComingSoonWidget> {
     super.initState();
     Provider.of<NewAndHotProvider>(context, listen: false)
         .fetchComingSoonMovies();
-    // Provider.of<InternetConnectivityProvider>(context,listen: false).getInternetConnectivity(context);
   }
 
   @override

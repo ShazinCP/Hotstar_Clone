@@ -18,7 +18,6 @@ class _TopFreeMoviesWidgetState extends State<TopFreeMoviesWidget> {
     super.initState();
     Provider.of<NewAndHotProvider>(context, listen: false)
         .fetchTopFreeMovies();
-    // Provider.of<InternetConnectivityProvider>(context,listen: false).getInternetConnectivity(context);
   }
 
   @override
