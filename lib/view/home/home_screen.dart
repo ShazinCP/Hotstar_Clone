@@ -106,8 +106,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body:
-        Consumer<HomeScrollProvider>(
-          builder: (context, scrollProvider, child) {
+        Consumer<HomeScrollProvider>(builder: (context, scrollProvider, child) {
       return NotificationListener<UserScrollNotification>(
         onNotification: ((notification) {
           final ScrollDirection direction = notification.direction;
@@ -132,15 +131,15 @@ class HomeScreen extends StatelessWidget {
                   ),
                   cHeight,
                   MainTitleCard(
-                    title: "Trending Now",
-                    apiUrl: ApiEndPoints.trendingMovies,
+                    title: "Popular Shows",
+                    apiUrl: ApiEndPoints.tvpopular,
                   ),
                   cHeight,
                   NumberTitleCard(),
                   cHeight,
                   MainTitleCard(
-                    title: "Popular Shows",
-                    apiUrl: ApiEndPoints.tvpopular,
+                    title: "Trending Now",
+                    apiUrl: ApiEndPoints.trendingMovies,
                   ),
                   cHeight,
                   MainTitleCard(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/view/downloads/widgets/widgets.dart';
+import 'package:hotstar/view/downloads/widgets/bottom_section.dart';
+import 'package:hotstar/view/downloads/widgets/center_section.dart';
+
 
 class DownloadScreen extends StatelessWidget {
   DownloadScreen({super.key});

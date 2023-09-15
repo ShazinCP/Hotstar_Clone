@@ -16,17 +16,6 @@ class ComingSoonInfoCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Row(
       children: [
-        // SizedBox(
-        //   width: 50,
-        //   height: 400,
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.start,
-        //     children: [
-        //       Text(fetchDate(movieInfo.releaseDate!),
-        //           style: const TextStyle(fontSize: 16, color: cGreyColor)),
-        //     ],
-        //   ),
-        // ),
         SizedBox(
           width: size.width,
           height: 480,
