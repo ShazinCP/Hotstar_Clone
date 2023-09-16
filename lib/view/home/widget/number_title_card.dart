@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/top_rated_provider.dart';
+import 'package:hotstar/controller/home_screen_controller/top_rated_provider.dart';
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/view/home/widget/number_card.dart';
 import 'package:hotstar/widgets/main_title.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/search_query_provider.dart';
+import 'package:hotstar/controller/search_controller/search_query_provider.dart';
 import 'package:hotstar/view/search/widget/search_idle.dart';
 import 'package:hotstar/view/search/widget/search_result.dart';
 import 'package:provider/provider.dart';

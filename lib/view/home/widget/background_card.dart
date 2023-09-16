@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/controller/home_backgroundcard_provider.dart';
+import 'package:hotstar/controller/home_screen_controller/home_backgroundcard_provider.dart';
 import 'package:hotstar/widgets/button_widget.dart';
 import 'package:provider/provider.dart';
 

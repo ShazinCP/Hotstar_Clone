@@ -1,5 +1,5 @@
 import 'package:hotstar/constants/string.dart';
-import 'package:hotstar/services/api_key.dart';
+import 'package:hotstar/constants/api_key.dart';
 
 class ApiEndPoints {
   static const trendingMovies = "$kBaseUrl/trending/all/day?api_key=$apikey";

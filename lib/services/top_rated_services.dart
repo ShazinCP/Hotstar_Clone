@@ -1,5 +1,5 @@
 import 'package:hotstar/model/movie_model.dart';
-import 'package:hotstar/services/apiendpoint.dart';
+import 'package:hotstar/constants/apiendpoint.dart';
 import 'package:hotstar/services/base_client.dart';
 
 class TopRateServices {

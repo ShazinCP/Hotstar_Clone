@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/controller/new_hot_provider.dart';
+import 'package:hotstar/controller/new_and_hot_controller/new_hot_provider.dart';
 import 'package:hotstar/view/new&hot/widgets/coming_soon_info_card.dart';
 import 'package:provider/provider.dart';
 

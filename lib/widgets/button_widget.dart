@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotstar/constants/constants.dart';
 import 'package:hotstar/helper/color.dart';
 
 
@@ -19,7 +20,7 @@ class PlayButton extends StatelessWidget {
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius:
-                  BorderRadius.circular(5.0),
+                 cRadius5
             ),
           ),
         ),

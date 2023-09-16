@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/search_idl_provider.dart';
+import 'package:hotstar/controller/internet_connectivity_controller/internet_connectivity_provider.dart';
+import 'package:hotstar/controller/search_controller/search_idl_provider.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/view/search/widget/title_search.dart';
@@ -20,6 +21,8 @@ class _SearchIdleWidgetState extends State<SearchIdleWidget> {
     super.initState();
     Provider.of<SearchIDLProvider>(context, listen: false)
         .fetchSearchIDLMovies();
+    Provider.of<InternetConnectivityProvider>(context, listen: false)
+        .getInternetConnectivity(context);
   }
 
   @override

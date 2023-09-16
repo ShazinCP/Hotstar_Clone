@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/model/tmdb_api_response.dart';
-import 'package:hotstar/services/apiendpoint.dart';
+import 'package:hotstar/constants/apiendpoint.dart';
 import 'package:http/http.dart' as http;
 
 class FetchMovieServices {

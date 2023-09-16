@@ -1,7 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/trending_movie_provider.dart';
+import 'package:hotstar/controller/download_screen_controller/trending_movie_provider.dart';
+import 'package:hotstar/controller/internet_connectivity_controller/internet_connectivity_provider.dart';
 import 'package:provider/provider.dart';
 
 class CenterSection extends StatefulWidget {
@@ -17,6 +18,8 @@ class _CenterSectionState extends State<CenterSection> {
     super.initState();
     Provider.of<TrendingMovieProvider>(context, listen: false)
         .initializeImages();
+    Provider.of<InternetConnectivityProvider>(context, listen: false)
+        .getInternetConnectivity(context);
   }
 
   @override
@@ -78,8 +81,6 @@ class _CenterSectionState extends State<CenterSection> {
     );
   }
 }
-
-
 
 class DownloadsImageWidget extends StatelessWidget {
   const DownloadsImageWidget({

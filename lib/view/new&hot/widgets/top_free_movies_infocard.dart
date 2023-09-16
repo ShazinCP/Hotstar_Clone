@@ -4,20 +4,28 @@ import 'package:hotstar/helper/color.dart';
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/widgets/video_widget.dart';
 
-class TopFreeMoviesInfoCard extends StatelessWidget {
+class TopFreeMoviesInfoCard extends StatefulWidget {
   const TopFreeMoviesInfoCard({super.key, required this.movieInfo});
   final MovieModel movieInfo;
+
+  @override
+  State<TopFreeMoviesInfoCard> createState() => _TopFreeMoviesInfoCardState();
+}
+
+class _TopFreeMoviesInfoCardState extends State<TopFreeMoviesInfoCard> {
+  
+  
   @override
   Widget build(BuildContext context) {
     String imageUrl =
-        'https://image.tmdb.org/t/p/w500${movieInfo.posterPath}?api_key=b2dee3b855c4ea705ff5dda3c0201768';
+        'https://image.tmdb.org/t/p/w500${widget.movieInfo.posterPath}?api_key=b2dee3b855c4ea705ff5dda3c0201768';
     Size size = MediaQuery.of(context).size;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         cHeight,
         Text(
-          movieInfo.originalTitle ?? "No Title Found ",
+          widget.movieInfo.originalTitle ?? "No Title Found ",
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -25,7 +33,7 @@ class TopFreeMoviesInfoCard extends StatelessWidget {
         ),
         cHeight,
         Text(
-          movieInfo.overview,
+          widget.movieInfo.overview,
           style: const TextStyle(color: cGreyColor),
         ),
         cHeight,

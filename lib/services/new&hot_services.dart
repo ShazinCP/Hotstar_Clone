@@ -1,7 +1,7 @@
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/services/base_client.dart';
 
-import 'apiendpoint.dart';
+import '../constants/apiendpoint.dart';
 
 class NewAndHotServices {
   List<MovieModel> upcomingMovies = [];

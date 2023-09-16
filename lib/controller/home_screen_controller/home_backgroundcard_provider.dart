@@ -9,3 +9,13 @@ class HomeBackgroundCardProvider with ChangeNotifier {
     notifyListeners();
   }
 }
+
+class HomeScrollProvider extends ChangeNotifier {
+  bool isScrolling = true;
+
+  void setIsScrolling(bool value) {
+    isScrolling = value;
+    notifyListeners();
+  }
+}
+

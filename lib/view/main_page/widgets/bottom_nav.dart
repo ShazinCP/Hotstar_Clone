@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/controller/bottom_navigation_controller/botton_nav_provider.dart';
 import 'package:hotstar/helper/color.dart';
 import 'package:provider/provider.dart';
 

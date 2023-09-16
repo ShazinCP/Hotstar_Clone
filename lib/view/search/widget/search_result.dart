@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hotstar/constants/constants.dart';
-import 'package:hotstar/controller/search_result_provider.dart';
+import 'package:hotstar/controller/internet_connectivity_controller/internet_connectivity_provider.dart';
+import 'package:hotstar/controller/search_controller/search_result_provider.dart';
 import 'package:hotstar/model/movie_model.dart';
 import 'package:hotstar/view/search/widget/title_search.dart';
 import 'package:provider/provider.dart';
@@ -18,8 +19,8 @@ class _SearchResultWidgetState extends State<SearchResultWidget> {
   @override
   void initState() {
     super.initState();
-    // Provider.of<SearchResultProvider>(context,listen: false).fetchSearchResult(widget.apiQuery);
-    // Provider.of<InternetConnectivityProvider>(context,listen: false).getInternetConnectivity(context);
+    Provider.of<SearchResultProvider>(context,listen: false).fetchSearchResult(widget.apiQuery);
+    Provider.of<InternetConnectivityProvider>(context,listen: false).getInternetConnectivity(context);
   }
   @override
   Widget build(BuildContext context) {

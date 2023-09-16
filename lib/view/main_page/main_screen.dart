@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hotstar/controller/botton_nav_provider.dart';
+import 'package:hotstar/controller/bottom_navigation_controller/botton_nav_provider.dart';
 import 'package:hotstar/view/downloads/download_screen.dart';
 import 'package:hotstar/view/home/home_screen.dart';
 import 'package:hotstar/view/main_page/widgets/bottom_nav.dart';
